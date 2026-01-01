@@ -15,7 +15,7 @@
         MouseCombo {
             bindings = <&mo 3>;
             key-positions = <37 40>;
-            layers = <3>;
+            layers = <0 2 1>;
         };
     };
 
