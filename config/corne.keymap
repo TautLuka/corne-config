@@ -7,16 +7,15 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos {
         compatible = "zmk,combos";
 
         MouseCombo {
-            bindings = <&mo 3>;
+            bindings = <&mo 0>;
             key-positions = <37 40>;
-            layers = <0 2 1>;
+            layers = <0 1>;
         };
     };
 
@@ -32,6 +31,16 @@
         };
     };
 
+    macros {
+        AltTab: AltTab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp>;
+
+            label = "ALTTAB";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -44,10 +53,10 @@
 
             display-name = "Base";
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E             &kp R  &kp T        &kp Y            &kp U  &kp I      &kp O    &kp P          &kp BSPC
-&kp TAB     &kp A  &kp S  &kp D             &kp F  &kp G        &kp H            &kp J  &kp K      &kp L    &kp SEMICOLON  &kp SQT
-&kp LSHFT   &kp Z  &kp X  &kp C             &kp V  &kp B        &kp N            &kp M  &kp COMMA  &kp DOT  &kp FSLH       &trans
-                          &kp LEFT_CONTROL  &mo 1  &kp SPACE    &kp RIGHT_SHIFT  &mo 2  &kp ENTER
+&kp ESCAPE        &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y            &kp U  &kp I      &kp O    &kp P          &kp BSPC
+&kp TAB           &kp A  &kp S  &kp D  &kp F  &kp G        &kp H            &kp J  &kp K      &kp L    &kp SEMICOLON  &kp SQT
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N            &kp M  &kp COMMA  &kp DOT  &kp FSLH       &trans
+                                &mo 3  &mo 1  &kp SPACE    &kp RIGHT_SHIFT  &mo 2  &kp ENTER
             >;
         };
 
@@ -58,7 +67,7 @@
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-            display-name = "Lower";
+            display-name = "numbers";
             bindings = <
 &kp GRAVE  &kp N1  &kp N2  &kp N3          &kp N4  &kp N5    &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &trans  &trans
 &trans     &kp N6  &kp N7  &kp N8          &kp N9  &kp N0    &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans  &trans
@@ -83,12 +92,12 @@
             >;
         };
 
-        layer_6 {
+        layer_4 {
             bindings = <
-&trans  &trans          &trans      &trans      &trans      &trans    &trans  &trans          &mmv MOVE_UP    &trans           &trans  &trans
-&trans  &trans          &trans      &mkp LCLK   &mkp RCLK   &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &bt BT_CLR_ALL  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR  &trans    &trans  &trans          &trans          &trans           &trans  &trans
-                                    &trans      &trans      &trans    &trans  &trans          &trans
+&trans            &trans  &trans         &kp LG(E)  &kp LG(R)  &kp LC(LS(ESCAPE))    &trans  &trans  &trans  &trans     &trans  &trans
+&kp LA(TAB)       &trans  &kp LS(LG(S))  &trans     &trans     &trans                &trans  &trans  &trans  &kp LG(L)  &trans  &trans
+&kp LEFT_COMMAND  &trans  &trans         &trans     &trans     &trans                &trans  &trans  &trans  &trans     &trans  &trans
+                                         &trans     &trans     &trans                &trans  &trans  &trans
             >;
         };
     };
