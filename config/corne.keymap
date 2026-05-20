@@ -94,10 +94,10 @@
 
         layer_4 {
             bindings = <
-&trans            &trans  &trans         &kp LG(E)  &kp LG(R)  &kp LC(LS(ESCAPE))    &trans  &trans  &trans  &trans     &trans  &trans
-&kp LA(TAB)       &trans  &kp LS(LG(S))  &trans     &trans     &trans                &trans  &trans  &trans  &kp LG(L)  &trans  &trans
-&kp LEFT_COMMAND  &trans  &trans         &trans     &trans     &trans                &trans  &trans  &trans  &trans     &trans  &trans
-                                         &trans     &trans     &trans                &trans  &trans  &trans
+&trans            &trans  &trans         &trans  &trans  &kp LC(LS(ESCAPE))    &trans  &trans  &trans  &trans  &trans  &trans
+&kp LA(TAB)       &trans  &kp LS(LG(S))  &trans  &trans  &trans                &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_COMMAND  &trans  &trans         &trans  &trans  &trans                &trans  &trans  &trans  &trans  &trans  &trans
+                                         &trans  &trans  &trans                &trans  &trans  &trans
             >;
         };
     };
