@@ -19,28 +19,6 @@
         };
     };
 
-    behaviors {
-        hm_mod: hm_mod {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HM_MOD";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-        };
-    };
-
-    macros {
-        AltTab: AltTab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp>;
-
-            label = "ALTTAB";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
